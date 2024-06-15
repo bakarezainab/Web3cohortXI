@@ -20,7 +20,7 @@ header {
     max-width: 600px;
     margin: 20px auto;
     padding: 15px;
-    background-color: #008080; /* Light blue container background */
+    background-color: #008080; /* Light green container background */
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
@@ -28,8 +28,6 @@ header {
 h1, h2, h3 {
     color: #000; /* Darker blue color */
 }
-
-
 
 
 /* Section Styles */
@@ -68,19 +66,23 @@ input:focus, button:focus {
 }
 
 button {
-    background-color: #1b263b; /* Dark blue button background */
+    background-color: #008080; /* Dark blue button background */
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
+#income-section, #expense-section {
+    border: 3px solid black;
+}
+
 button:hover {
-    background-color: #0d1b2a; /* Darker blue on hover */
+    background-color: #008080; /* Blue on hover */
 }
 
 /* Summary Styles */
 #summary-section {
-    background-color: #778da9; /* Light blue summary background */
+    background-color: #008080;; /* Green summary background */
     color: #1b263b; /* Dark blue text color */
     padding: 15px;
     border-radius: 8px;
@@ -98,12 +100,12 @@ li {
 
 /* History List Styles */
 #history-list li {
-    border-bottom: 1px solid #415a77; /* Darker blue border */
+    border-bottom: 1px solid #415a77; /* Blue border */
     padding: 15px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e0e1dd; /* Light gray background */
+    background-color: #e0e1dd; /* off white background */
     transition: transform 0.3s;
 }
 
@@ -125,18 +127,6 @@ li {
     background-color: #0d1b2a; /* Darker blue on hover */
 }
 
-/* Category List Styles */
-#category-list li {
-    font-weight: bold;
-    color: #778da9; /* Light blue text color */
-}
-
-/* Budget Goals Styles */
-#budget-goals form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
 
 /* Responsive Styles */
 @media screen and (max-width: 600px) {

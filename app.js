@@ -1,8 +1,7 @@
 let totalIncome = 0;
 let totalExpenses = 0;
 const transactionHistory = [];
-let categoryExpenses = {};
-const budgetGoals = {};
+
 
 function addIncome() {
     const amount = parseFloat(document.getElementById('income-amount').value);
@@ -14,7 +13,7 @@ function addIncome() {
     transactionHistory.push(transaction);
     updateSummary();
     updateHistoryList();
-    updateCategoryExpenses();
+    
 }
 
 function addExpense() {
@@ -27,7 +26,7 @@ function addExpense() {
     transactionHistory.push(transaction);
     updateSummary();
     updateHistoryList();
-    updateCategoryExpenses();
+    
 }
 
 function updateSummary() {
@@ -61,36 +60,3 @@ function deleteTransaction(index) {
     updateCategoryExpenses();
 }
 
-function updateCategoryExpenses() {
-    categoryExpenses = {};
-
-    transactionHistory
-        .filter(transaction => transaction.type === 'expense')
-        .forEach(transaction => {
-            const category = transaction.category.toLowerCase();
-            categoryExpenses[category] = (categoryExpenses[category] || 0) + transaction.amount;
-        });
-
-    const categoryList = document.getElementById('category-list');
-    categoryList.innerHTML = '';
-
-    for (const category in categoryExpenses) {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${category.toUpperCase()} - $${categoryExpenses[category].toFixed(2)}`;
-        categoryList.appendChild(listItem);
-    }
-}
-
-function setBudget() {
-    const category = document.getElementById('budget-category').value.toLowerCase();
-    const amount = parseFloat(document.getElementById('budget-amount').value);
-
-    budgetGoals[category] = amount;
-    updateBudgetGoals();
-}
-
-function updateBudgetGoals() {
-    console.log(budgetGoals); // You can update the UI or perform additional logic here
-}
-
-// ... (remaining JavaScript code) ...
